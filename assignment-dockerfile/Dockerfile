@@ -1,18 +1,14 @@
 # fill in the blanks to dockerize this node app
-FROM
+FROM node:10.15-alpine
 
-EXPOSE
+EXPOSE 3000
 
-RUN
+WORKDIR /usr/src/app
 
-WORKDIR
+COPY package*.json ./  
 
-COPY
+RUN npm install && npm cache clean --force
 
-RUN
+COPY . .
 
-COPY
-
-ENTRYPOINT
-
-CMD
+CMD ["node", "app.js"]

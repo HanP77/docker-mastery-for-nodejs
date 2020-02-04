@@ -3,8 +3,9 @@ version: '2.4'
 services:
   express:
     build: .
+    command: /app/node_modules/.bin/nodemon ./bin/www 
     ports:
-      - 3000:3000
+      - 8888:3000
     volumes:
       - .:/app
     environment:

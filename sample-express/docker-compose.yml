@@ -6,7 +6,9 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - .:/app
+      - .:/node/app
+      # Add an anonymous volume to "hide" node_modules from the host
+      - /node/app/node_modules
     environment:
       - DEBUG=sample-express:*
 
